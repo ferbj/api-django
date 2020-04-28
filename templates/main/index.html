@@ -1,0 +1,22 @@
+{% load mix %}
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="utf-8">
+ <title>{% block title %}Front-End{% endblock %}</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="frontend">
+ <meta name="keywords" content="restapi">
+ {% csrf_token %}
+ </head>
+<body>
+  {% block content %}
+  <div id="app" class="container">
+  </div>
+  {% endblock content %}
+ {% block scripts %}
+    <script src="{% mix 'build/js/index' %}"></script>
+  {% endblock %}
+</body>
+</html>

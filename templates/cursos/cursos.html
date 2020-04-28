@@ -1,0 +1,38 @@
+{% load mix %} {% block content %} 
+{% include "main/header.html" %} 
+{% block css %}
+<style>
+  .navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+</style>
+{% endblock css %}
+<div class="container">
+  <h2 class="text-center">Cursos</h2>
+  <table class="table table-hover table-striped">
+    <thead class="text-center">
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Fecha Inicio</th>
+      <th>Fecha Fin</th>
+      <th>Activo</th>
+    </thead>
+    <tbody>
+      {% for item in cursos %}
+      <tr class="text-center">
+        <td>{{forloop.counter}}</td>
+        <td>{{item.nombre}}</td>
+        <td>{{item.fecha_inicio|date:"d/m/Y"}}</td>
+        <td>{{item.fecha_fin|date:"d/m/Y"}}</td>
+        {% if item.estado == True %}
+        <td class="text-primary">{{item.text}} Activo</td>
+        {% else %}
+        <td class="text-danger">{{item.text}} Inactivo</td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+{% endblock content %}
