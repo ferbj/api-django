@@ -42,6 +42,10 @@
               <td>{{ country.countryisocode }}</td>
               <td>{{ country.date }}</td>
               <td>{{ new Intl.NumberFormat().format(country.quantity) }}</td>
+              
+            </tr>
+            <tr>
+              
             </tr>
           </tbody>
           <div v-else>
@@ -58,6 +62,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 export default {
+  
   data() {
     return {
       country: {
@@ -72,6 +77,7 @@ export default {
       pages: [],
     };
   },
+ 
   created() {
     this.getDatadb();
   },
@@ -93,7 +99,7 @@ export default {
       }).then((result) => {
         if (result.value) {
           return new Promise((resolve, reject) => {
-            let urlapi = `http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2017:2018&format=json`;
+            let urlapi = `https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2017:2018&format=json`;
             axios
               .get(urlapi)
               .then((response) => {
@@ -137,7 +143,7 @@ export default {
     },
 
     getCountries() {
-      let url = `http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2017:2018&format=json`;
+      let url = `http://localhost:8000/v2/country/all/indicator/SP.POP.TOTL?date=2017:2018&format=json`;
       axios
         .get(url)
         .then((response) => {
@@ -194,5 +200,10 @@ export default {
         });
     },
   },
+  computed:{
+    getCurrentIndex: function(index){
+       
+    }
+  }
 };
 </script>

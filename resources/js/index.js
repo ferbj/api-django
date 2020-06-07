@@ -22,6 +22,8 @@ Vue.use(VueCookies);
 
 let csrftoken = $cookies.get('csrftoken');
 window.axios.defaults.xsrfCookieName = 'csrftoken';
+//window.axios.defaults.headers.common['Access-Control-Request-Method'] = '*';
+
 //window.axios.defaults.headers.common['X-CSRFToken'] = csrftoken;
 /*window.axios.defaults.xsrfHeaderName = "X-CSRFToken"
 window.axios.defaults.headers.common['x-csrftoken'] = csrftoken;

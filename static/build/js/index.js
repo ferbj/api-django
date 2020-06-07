@@ -1816,6 +1816,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -1856,7 +1860,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (result) {
         if (result.value) {
           return new Promise(function (resolve, reject) {
-            var urlapi = "http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2017:2018&format=json";
+            var urlapi = "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2017:2018&format=json";
             axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(urlapi).then(function (response) {
               _this.$data.dataexp = response.data[1];
               var dataexp = JSON.parse(JSON.stringify(_this.$data.dataexp));
@@ -1892,7 +1896,7 @@ __webpack_require__.r(__webpack_exports__);
     getCountries: function getCountries() {
       var _this2 = this;
 
-      var url = "http://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2017:2018&format=json";
+      var url = "http://localhost:8000/v2/country/all/indicator/SP.POP.TOTL?date=2017:2018&format=json";
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
         _this2.$data.dataexp = response.data[1];
         return _this2.$data.dataexp; // this.pages = response.data[1]
@@ -1947,6 +1951,9 @@ __webpack_require__.r(__webpack_exports__);
         console.log(error);
       });
     }
+  },
+  computed: {
+    getCurrentIndex: function getCurrentIndex(index) {}
   }
 });
 
@@ -57972,26 +57979,30 @@ var render = function() {
             _vm.pages.length > 0
               ? _c(
                   "tbody",
-                  _vm._l(_vm.pages, function(country, index) {
-                    return _c("tr", { key: country.id }, [
-                      _c("td", [_vm._v(_vm._s(index + 1))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(country.name))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(country.countryisocode))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(country.date))]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _vm._v(
-                          _vm._s(
-                            new Intl.NumberFormat().format(country.quantity)
+                  [
+                    _vm._l(_vm.pages, function(country, index) {
+                      return _c("tr", { key: country.id }, [
+                        _c("td", [_vm._v(_vm._s(index + 1))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(country.name))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(country.countryisocode))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(country.date))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(
+                              new Intl.NumberFormat().format(country.quantity)
+                            )
                           )
-                        )
+                        ])
                       ])
-                    ])
-                  }),
-                  0
+                    }),
+                    _vm._v(" "),
+                    _c("tr")
+                  ],
+                  2
                 )
               : _c("div", [_c("p", [_vm._v("No results")])])
           ]),
@@ -73402,7 +73413,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('paginate', jw_vue_paginati
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap__WEBPACK_IMPORTED_MODULE_5__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_cookies__WEBPACK_IMPORTED_MODULE_4___default.a);
 var csrftoken = $cookies.get('csrftoken');
-window.axios.defaults.xsrfCookieName = 'csrftoken'; //window.axios.defaults.headers.common['X-CSRFToken'] = csrftoken;
+window.axios.defaults.xsrfCookieName = 'csrftoken'; //window.axios.defaults.headers.common['Access-Control-Request-Method'] = '*';
+//window.axios.defaults.headers.common['X-CSRFToken'] = csrftoken;
 
 /*window.axios.defaults.xsrfHeaderName = "X-CSRFToken"
 window.axios.defaults.headers.common['x-csrftoken'] = csrftoken;
@@ -73672,8 +73684,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\django\Bid\api\resources\js\index.js */"./resources/js/index.js");
-module.exports = __webpack_require__(/*! D:\django\Bid\api\resources\css\app.scss */"./resources/css/app.scss");
+__webpack_require__(/*! D:\django\bid\api\resources\js\index.js */"./resources/js/index.js");
+module.exports = __webpack_require__(/*! D:\django\bid\api\resources\css\app.scss */"./resources/css/app.scss");
 
 
 /***/ })
