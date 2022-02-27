@@ -31,8 +31,7 @@ window.axios.defaults.headers.common.accept = 'application/json'*/
 new Vue({
     router,
     components: {
-    App
+        App
     },
     render: h => h(App)
-  }).$mount('#app')
-
+}).$mount('#app')

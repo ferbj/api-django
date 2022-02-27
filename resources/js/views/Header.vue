@@ -2,7 +2,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
       	<router-link class="nav-brand" to="/">
-        <img class="img-responsive" width="100px" src="https://hakeema.imgix.net/co-incide/unit/5aecf7b06015d26c536ca9d6-c9c512.jpeg?w=250&h=250&fit=fillmax&bg=FFFFFFFF&pad=5&auto=format"/>
+        <img class="img-responsive" width="50px" alt="logo" src="https://pbs.twimg.com/profile_images/1226898562010767360/PBYe9jgY_400x400.png"/>
         </router-link>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="true"> 
 					<span class="navbar-toggler-icon"></span>

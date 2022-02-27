@@ -11,6 +11,6 @@ const mix = require('laravel-mix');
  |
  */
 
- 
-mix.js('resources/js/index.js', 'static/build/js')
+
+mix.js('resources/js/index.js', 'static/build/js').vue({ version: 2 })
     .sass('resources/css/app.scss', 'static/build/css');
